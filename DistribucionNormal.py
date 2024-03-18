@@ -6,8 +6,15 @@ import matplotlib.pyplot as plt
 data = pd.read_csv('defunciones.csv')
 
 # Resumen de las variables numéricas
-print("Resumen de las variables numéricas:")
+print("Resumen de las variables:")
 print(data.describe())
+
+# Seleccionar solo las columnas numéricas de interés
+variables_numericas = data[['Mesreg', 'Añoreg', 'Diaocu', 'Mesocu', 'Añoocu', 'Edadif']]
+
+# Resumen de las variables numéricas
+print("Resumen de las variables numéricas:")
+print(variables_numericas.describe())
 
 # Obtener el número de columnas numéricas
 num_cols = len(data.select_dtypes(include=[np.number]).columns)
@@ -39,7 +46,7 @@ for column in data.select_dtypes(include=['object']).columns:
     print(data[column].value_counts())
 
 
-# Extraer los datos de la columna "edad"
+# Extraer los datos de las columnas
 Mes = data['Mesreg']
 Año = data['Añoreg']
 Dia = data['Diaocu']
