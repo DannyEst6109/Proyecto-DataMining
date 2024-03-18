@@ -1,3 +1,4 @@
 #ignore vscode extensions
 .vscode/
 defunciones.csv
+defunciones_clean.csv
